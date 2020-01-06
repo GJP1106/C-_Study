@@ -1,0 +1,33 @@
+一、迭代器简介
+    //vector
+	迭代器是一种遍历容器内元素的数据类型，这种数据类型感觉有点像指针，我们理解的时候就理解
+	为迭代器用来指向容器中的某个元素。
+	string，vector，[],很少用[],更常用的访问方式就是用迭代器(更通用)。
+	通过迭代器，我们就可以读取容器中的元素值，读string中的每个字符，还可以修改某个迭代器所指向的元素值。
+	++，--
+	list，map，尽量学会用迭代器来访问容器中的元素。
+
+二、容器的迭代器类型
+    vector<int> iv = {100,200,300};
+	vector<int>::iterator iter; //定义迭代器，也必须是vector<int>
+	
+	大家在理解的时候，就把整个的vector<int>::iterator 理解成一个类型，这种类型就专门应用于迭代器。
+	当我们用这个类型定义一个变量的时候，这个变量，就是个迭代器，这里iter这个变量就是迭代器。
+
+三、迭代器begin()/end()操作，反向迭代器rbegin()/rend()操作
+    begin()/end()用来 返回 迭代类型。rbegin()/rend()用来 返回 迭代类型。
+	a)begin()返回一个迭代器类型(大家就理解为返回一个迭代器);
+	iter = iv.begin(); //如果容器中有元素，则begin返回的迭代器，指向的是容器中的第一个元素。
+	                   //相当于iter指向了iv[0];
+	b)end():返回一个迭代器类型(大家就理解成返回一个迭代器);
+	iter = iv.end(); //end返回的迭代器指向的并不是末端元素，而是末端元素的后边，哪这个后边怎么理解？
+	                  //我们就理解成end()指向的是一个不存在的元素。
+	
+	c)如果一个容器为空，那么begin()和end()返回的迭代器就相同。
+	vector<int> iv2;
+	vector<int>::iterator iterbegin = iv2.begin();
+	vector<int>::iterator iterend = iv2.end();
+	if(iterbegin == iterend)
+	{
+		cout << "容器iv2为空" << endl; 
+	}
