@@ -4,6 +4,8 @@ shared_ptr<int> myfunc(shared_ptr<int> &ptmp)  //如果参数为引用，则智�
 	return ptmp;
 }
 
+void 
+
 
 int main() {
      //一、shared_ptr引用计数的增加和减少
